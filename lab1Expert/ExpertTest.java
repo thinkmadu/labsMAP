@@ -47,3 +47,4 @@ public class ExpertTest {
         assertTrue(disciplinasMinistradas.contains(disciplina));
     }
 }
+

@@ -1,7 +1,7 @@
-package lab3;
+package lab4HerancaPolimorfismo;
 
 import java.util.ArrayList;
-import lab3.interfaces.Funcao;
+import lab4HerancaPolimorfismo.interfaces.Funcao;
 
 public class Acervo {
     public ArrayList<Filme> filmes;

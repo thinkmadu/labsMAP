@@ -1,4 +1,4 @@
-package lab2;
+package lab2CoesaoAcoplamento;
 
 public class Quadrado extends FigurasGeometricas{
     private int lado;

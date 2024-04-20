@@ -1,4 +1,4 @@
-package lab2;
+package lab2CoesaoAcoplamento;
 
 public class Circulo extends FigurasGeometricas {
     private int raio;

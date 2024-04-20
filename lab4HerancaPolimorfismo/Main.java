@@ -1,6 +1,6 @@
-package lab3;
+package lab4HerancaPolimorfismo;
 
-import lab3.Funcoes.*;
+import lab4HerancaPolimorfismo.Funcoes.*;
 
 public class Main {
     public static void main(String[] args) {

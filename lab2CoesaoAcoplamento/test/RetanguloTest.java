@@ -1,8 +1,9 @@
-package lab2.test;
+package lab2CoesaoAcoplamento.test;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import lab2.Retangulo;
+
+import lab2CoesaoAcoplamento.Retangulo;
 
 public class RetanguloTest {
     @Test

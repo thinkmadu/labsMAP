@@ -1,4 +1,4 @@
-package lab3;
+package lab4HerancaPolimorfismo;
 
 import java.util.ArrayList;
 

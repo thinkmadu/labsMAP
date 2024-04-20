@@ -1,6 +1,6 @@
-package lab3;
+package lab4HerancaPolimorfismo;
 
-import lab3.interfaces.Funcao;
+import lab4HerancaPolimorfismo.interfaces.Funcao;
 import java.util.ArrayList;
 
 public class Funcionario {

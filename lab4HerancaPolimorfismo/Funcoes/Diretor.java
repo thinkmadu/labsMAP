@@ -1,6 +1,6 @@
-package lab3.Funcoes;
+package lab4HerancaPolimorfismo.Funcoes;
 
-import lab3.interfaces.Funcao;
+import lab4HerancaPolimorfismo.interfaces.Funcao;
 
 public class Diretor implements Funcao{
     public String ocupacao;

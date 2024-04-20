@@ -1,9 +1,9 @@
-package lab3.test;
+package lab4HerancaPolimorfismo.test;
 
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import lab3.*;
+import lab4HerancaPolimorfismo.*;
 
 public class AcervoTest {
     private Acervo acervo;
