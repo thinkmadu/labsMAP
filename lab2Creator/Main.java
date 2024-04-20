@@ -1,10 +1,11 @@
+package lab2Creator;
 
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
         Professor professor1 = new Professor("Ana");
-	    Professor professor2 = new Professor("Julia");
+        Professor professor2 = new Professor("Julia");
 	    Professor professor3 = new Professor("Giovanna");
 
 	    Disciplina portugues = new Disciplina("14:00", "Português", "123", professor1);
@@ -18,8 +19,8 @@ public class Main {
 	    ArrayList<Disciplina> disciplinas1 = new ArrayList<>();
 	    ArrayList<Disciplina> disciplinas2 = new ArrayList<>();
 	    ArrayList<Disciplina> disciplinas3 = new ArrayList<>();
-
-	    disciplinas1.add(portugues);
+	
+        disciplinas1.add(portugues);
 	    disciplinas2.add(ingles);
 	    disciplinas3.add(matematica);
 

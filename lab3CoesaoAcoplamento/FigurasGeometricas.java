@@ -1,4 +1,4 @@
-package lab2CoesaoAcoplamento;
+package lab3CoesaoAcoplamento;
 
 public abstract class FigurasGeometricas {
     public abstract double calcularArea() throws UnsupportedOperationException;

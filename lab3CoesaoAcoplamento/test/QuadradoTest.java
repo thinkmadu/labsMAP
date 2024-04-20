@@ -1,9 +1,9 @@
-package lab2CoesaoAcoplamento.test;
+package lab3CoesaoAcoplamento.test;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-import lab2CoesaoAcoplamento.Quadrado;
+import lab3CoesaoAcoplamento.Quadrado;
 
 public class QuadradoTest {
     @Test

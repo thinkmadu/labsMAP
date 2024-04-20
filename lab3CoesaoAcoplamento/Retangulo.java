@@ -1,4 +1,4 @@
-package lab2CoesaoAcoplamento;
+package lab3CoesaoAcoplamento;
 
 public class Retangulo extends FigurasGeometricas{
     private int altura;
