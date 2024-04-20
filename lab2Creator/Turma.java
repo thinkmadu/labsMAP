@@ -1,4 +1,4 @@
-
+package lab2Creator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,44 +19,42 @@ public class Turma {
         professor.getHorarios().getListaTurmas().add(this);
         disciplina.addTurmaNaDisciplina(this);
     }
+
     // tem 2 formas de adicionar o prof na turma no construtor e em profTurma
     public Turma(String nome, String horario, Disciplina disciplina) {
-        this.nome = nome; 
+        this.nome = nome;
         this.horario = horario;
         this.alunos = new ArrayList<>();
         this.disciplina = disciplina;
         disciplina.addTurmaNaDisciplina(this);
     }
-    //gets e sets
+
+    // gets e sets
     public String getNome() {
         return nome;
     }
-
 
     public List<Aluno> getAlunos() {
         return alunos;
     }
 
-
     public Professor getProfessor() {
         return professor;
     }
 
-     public void setProfessor(Professor professor) {
-         this.professor = professor;
-     }
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
 
     public Disciplina getDisciplina() {
         return disciplina;
     }
 
-    
     public String getHorario() {
         return horario;
     }
-   
 
-    //métodos
+    // métodos
     public void adicionarAluno(Aluno aluno) throws IllegalArgumentException {
         if (aluno == null) {
             throw new NullPointerException("Aluno não pode ser nulo.");
@@ -75,7 +73,4 @@ public class Turma {
         alunos.add(aluno);
         aluno.getAlunoTurma().addTurma(this);
     }
-
-      
-
 }

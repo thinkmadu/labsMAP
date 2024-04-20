@@ -1,8 +1,7 @@
-
+package lab2Creator;
 
 public class Creator {
-    
-    public  static Disciplina criarDisciplina(String nome) {
+    public static Disciplina criarDisciplina(String nome) {
         return new Disciplina(nome);
     }
 
@@ -10,7 +9,7 @@ public class Creator {
         return new Professor(nome, codigo);
     }
 
-    public static Turma criarTurma(String nome, Professor professor, String horario, Disciplina disciplina){
+    public static Turma criarTurma(String nome, Professor professor, String horario, Disciplina disciplina) {
         return new Turma(nome, professor, horario, disciplina);
     }
 

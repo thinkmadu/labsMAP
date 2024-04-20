@@ -1,5 +1,8 @@
+package lab2Creator;
+
 public class ControleAcademico {
     public static void main(String[] args) {
+
         Disciplina disciplina1 = Creator.criarDisciplina("Física");
         Disciplina disciplina2 = Creator.criarDisciplina("Português");
         Disciplina disciplina3 = Creator.criarDisciplina("Filosofia");

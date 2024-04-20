@@ -1,27 +1,14 @@
 package lab2Creator;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Aluno {
     private String nome;
     private String matricula;
-    private List<Disciplina> disciplinasMatriculado;
+    private AlunoTurma horarios;
 
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
+    public Aluno(String nome, String matricula) {
+        this.nome = nome;
         this.matricula = matricula;
-    }
-
-    public List<Disciplina> getDisciplinasMatriculado() {
-        return disciplinasMatriculado;
-    }
-
-    public void setDisciplinasMatriculado(List<Disciplina> disciplinasMatriculado) {
-        this.disciplinasMatriculado = disciplinasMatriculado;
+        this.horarios = new AlunoTurma(this);
     }
 
     public String getNome() {
@@ -32,31 +19,33 @@ public class Aluno {
         this.nome = nome;
     }
 
-    public Aluno(String nome, String matricula) {
-        this.nome = nome;
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
         this.matricula = matricula;
-        this.disciplinasMatriculado = new ArrayList<>();
     }
 
-    public void matricularDisciplina(Disciplina disciplina) {
-        this.disciplinasMatriculado.add(disciplina);
-    }
-
-    public ArrayList<String> getHorario() {
-        ArrayList<String> horarios = new ArrayList<>();
-        for (Disciplina disciplina : disciplinasMatriculado) {
-            horarios.add(disciplina.getHorario());
-        }
-        return horarios;
-    }
-
-    public void setHorario(String codigoDisciplina, String novoHorario) {
-        for (Disciplina disciplina : disciplinasMatriculado) {
-            if (disciplina.getCodigo().equals(codigoDisciplina)) {
-                disciplina.setHorario(novoHorario);
-                return;
+    public AlunoTurma getAlunoTurma() {
+        try {
+            // Verificação se 'horarios' está nulo
+            if (horarios == null) {
+                throw new NullPointerException("Variável 'horarios' não inicializada.");
             }
+
+            // Verificação se 'horarios' é do tipo 'AlunoTurma'
+            if (!(horarios instanceof AlunoTurma)) {
+                throw new ClassCastException("Variável 'horarios' não é do tipo 'AlunoTurma'.");
+            }
+
+            return horarios;
+        } catch (NullPointerException e) {
+            System.err.println("Erro: " + e.getMessage());
+            return null;
+        } catch (ClassCastException e) {
+            System.err.println("Erro: " + e.getMessage());
+            return null;
         }
-        System.out.println("Disciplina não encontrada.");
     }
 }
