@@ -32,6 +32,5 @@ public class RDM {
             return null;
         }
         return getListaTurmas();
-
     }
 }
