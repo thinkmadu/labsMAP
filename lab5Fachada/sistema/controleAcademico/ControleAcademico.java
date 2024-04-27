@@ -41,7 +41,6 @@ public class ControleAcademico {
             }
         }
         throw new ProfessorException(); //Adiciona uma exception
-
     }
 
     //Checagem de aluno existente
@@ -52,7 +51,6 @@ public class ControleAcademico {
             }
         }
         throw new AlunoException();
-
     }
     //------------------------------------------------------------------------------------
 
@@ -65,7 +63,6 @@ public class ControleAcademico {
         }
         listaTurmas.add(newTurma);
         return true;
-
     }
 
     //Checagem de professor ja cadastrado e tempo de casa
