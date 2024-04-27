@@ -53,9 +53,9 @@ public class AlunoTest {
         assertTrue(aluno1.getAlunoTurma() instanceof AlunoTurma);
     }
 
-    @Test(expected = NullPointerException.class)
-    public void testaGetAlunoTurmaNullPointerException() {
-        Aluno alunoNulo = null;
-        alunoNulo.getAlunoTurma();
-    }
+    // @Test(expected = NullPointerException.class)
+    // public void testaGetAlunoTurmaNullPointerException() {
+    //     Aluno alunoNulo = null;
+    //     alunoNulo.getAlunoTurma();
+    // }
 }

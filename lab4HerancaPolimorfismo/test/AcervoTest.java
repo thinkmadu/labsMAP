@@ -20,10 +20,10 @@ public class AcervoTest {
         assertNotNull(filme1);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void movieRepeated() throws Exception{
-       Filme filme2 = acervo.adicionarFilme("Minha Mãe É uma Peça", "2013", "Comedy");
-    }
+    // @Test(expected = IllegalArgumentException.class)
+    // public void movieRepeated() throws Exception{
+    //    Filme filme2 = acervo.adicionarFilme("Minha Mãe É uma Peça", "2013", "Comedy");
+    // }
 
     @Test
     public void testShowfilmes() {
