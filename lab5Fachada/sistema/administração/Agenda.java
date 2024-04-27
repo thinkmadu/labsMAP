@@ -12,6 +12,14 @@ public class Agenda {
         this.entrevistas = new ArrayList<>();
     }
 
+    public ArrayList<LocalDateTime> getReunioes() {
+        return this.reunioes;
+    }
+
+    public ArrayList<LocalDateTime> getEntrevistas() {
+        return this.entrevistas;
+    }
+
     public void setReunioes(ArrayList<LocalDateTime> reunioes){
         this.reunioes = reunioes;
     }
