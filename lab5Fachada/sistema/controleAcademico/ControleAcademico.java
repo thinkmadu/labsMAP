@@ -99,7 +99,6 @@ public class ControleAcademico {
             }
         }
         return false;
-
     }
 
     //Checagem pelo nome da turma

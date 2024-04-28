@@ -6,7 +6,6 @@ import lab5Fachada.sistema.almoxarifado.Almoxarifado;
 import lab5Fachada.sistema.infraestrutura.Infraestrutura;
 import lab5Fachada.sistema.administração.Administracao;
 
-
 public class SIG {
     final private Financeiro financeiro;
     final private Administracao administracao;
@@ -23,7 +22,6 @@ public class SIG {
     }
 
     public Financeiro getFinanceiro() {
-
         return this.financeiro;
     }
 
@@ -32,17 +30,14 @@ public class SIG {
     }
 
     public ControleAcademico getControleAcademico() {
-
         return this.controleAcademico;
     }
 
     public Almoxarifado getAlmoxarifado() {
-
         return this.almoxarifado;
     }
 
     public Infraestrutura getInfraestrutura() {
-
         return this.infraEstrutura;
     }
 }

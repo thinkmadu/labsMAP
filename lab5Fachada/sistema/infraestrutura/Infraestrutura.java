@@ -48,7 +48,7 @@ public class Infraestrutura {
             if (sala.getNumero() == numero && sala.getBloco().equals(bloco)) {
                 if(sala.getDisponivel()){
                     sala.setDisponivel(false);
-                    return true;
+                    return false;
                 }
             }
         }
@@ -57,7 +57,7 @@ public class Infraestrutura {
 
     public Sala getSala(int numero, String bloco) throws SalaException{
         for (Sala sala : salas) {
-            if (sala.getNumero()==numero && sala.getBloco().equals(bloco)) {
+            if (sala.getNumero() == numero && sala.getBloco().equals(bloco)) {
                 return sala;
             }
         }
