@@ -7,12 +7,17 @@ import lab5Fachada.sistema.controleAcademico.auxiliar.Turma;
 import lab5Fachada.sistema.controleAcademico.exception.AlunoException;
 import lab5Fachada.sistema.controleAcademico.exception.ProfessorException;
 import lab5Fachada.sistema.controleAcademico.exception.TurmaException;
-import lab5Fachada.sistema.controleAcademico.models.*;
+import lab5Fachada.sistema.controleAcademico.models.Professor;
+import lab5Fachada.sistema.controleAcademico.models.Aluno;
+import lab5Fachada.sistema.controleAcademico.auxiliar.Turma;
+import lab5Fachada.sistema.infraestrutura.Infraestrutura;
+
 
 public class ControleAcademico {
     private List<Aluno> listaAlunos;
     private List<Professor> professoresCadastrados;
     private List<Turma> listaTurmas;
+
     
     public ControleAcademico() {
         listaTurmas = new ArrayList<>();

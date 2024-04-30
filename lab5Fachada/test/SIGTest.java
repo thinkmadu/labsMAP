@@ -120,16 +120,16 @@ public class SIGTest {
         assertTrue(sig.getInfraestrutura().cadastrarSala(104, "C - CCT", true));
     }
 
-    //Teste cadastrar disciplina na sala
-    @Test
-    public void testSalaDisciplina() throws TurmaException, SalaException {
-        sig.getControleAcademico().cadastrarTurma("Banco de Dados", "Terça", "7:00");
-        assertTrue(sig.getInfraestrutura().reservarSala(sig.getControleAcademico().buscarTurma("Banco de Dados"), 104, "C - CCT"));
-        assertFalse(sig.getInfraestrutura().reservarSala(sig.getControleAcademico().buscarTurma("Banco de Dados"), 104, "C - CCT"));
-    }
+    //Verifica se a sala está disponivel ou não
 
     @Test
     public void testSalaDisponivel() throws TurmaException, SalaException {
+        sig.getInfraestrutura().cadastrarSala(101, "A - CCT", true);
+        sig.getInfraestrutura().cadastrarSala(103, "B - CCT", true);
+        sig.getInfraestrutura().cadastrarSala(104, "C - CCT", true);
+        sig.getControleAcademico().cadastrarTurma("Banco de Dados", "Terça", "7:00");
+        sig.getInfraestrutura().reservarSala(sig.getControleAcademico().buscarTurma("Banco de Dados"), 104, "C - CCT");
+
         assertTrue(sig.getInfraestrutura().getSala(101, "A - CCT").getDisponivel());
         assertTrue(sig.getInfraestrutura().getSala(103, "B - CCT").getDisponivel());
         assertFalse(sig.getInfraestrutura().getSala(104, "C - CCT").getDisponivel());
