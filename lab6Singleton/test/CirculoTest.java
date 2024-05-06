@@ -1,10 +1,8 @@
 package lab6Singleton.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import lab6Singleton.exeception.ExceptionValorNegativoOuZero;
 import lab6Singleton.models.FiguraGeometrica;
 import lab6Singleton.sistema.Gerador;
