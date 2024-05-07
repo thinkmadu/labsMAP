@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import lab6Singleton.exeception.ExceptionValorNegativoOuZero;
 import lab6Singleton.models.FiguraGeometrica;
-import lab6Singleton.sistema.Gerador;
+import lab6Singleton.sistema.*;
 
 public class QuadradoTest {
     static FiguraGeometrica quadrado, quadrado2;
@@ -15,8 +15,8 @@ public class QuadradoTest {
     //Define os lados do quadrado
     @BeforeAll
     public static void setUp() throws ExceptionValorNegativoOuZero {
-        quadrado = Gerador.getQuadrado(4);
-        quadrado2 = Gerador.getQuadrado(5);
+        quadrado = Fachada.criarQuadrado(4);
+        quadrado2 = Fachada.criarQuadrado(5);
 
     }
 

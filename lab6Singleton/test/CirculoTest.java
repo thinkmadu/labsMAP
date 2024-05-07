@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import lab6Singleton.exeception.ExceptionValorNegativoOuZero;
 import lab6Singleton.models.FiguraGeometrica;
-import lab6Singleton.sistema.Gerador;
+import lab6Singleton.sistema.*;
 
 public class CirculoTest {
     static FiguraGeometrica circulo;
@@ -13,7 +13,7 @@ public class CirculoTest {
     //Definindo o raio do circulo
     @BeforeAll
     public static void setUp() throws ExceptionValorNegativoOuZero {
-        circulo = Gerador.getCirculo(5);
+        circulo = Fachada.criarCirculo(5);
     }
 
     @Test

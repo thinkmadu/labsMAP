@@ -4,19 +4,10 @@ import lab6Singleton.exeception.ExceptionValorNegativoOuZero;
 
 
 public class Circulo implements FiguraGeometrica{
-    private static Circulo instancia = null;
     private double raio;
 
-    // Exception
-    public static Circulo getInstancia(double raio) throws ExceptionValorNegativoOuZero {
-        if (instancia == null){
-            instancia = new Circulo(raio);
-        }
-        return instancia;
-    }
-
     // Construtor
-    private Circulo(double raio) throws ExceptionValorNegativoOuZero {
+    public Circulo(double raio) throws ExceptionValorNegativoOuZero {
         if (raio <= 0) {
             throw new ExceptionValorNegativoOuZero();
         }
