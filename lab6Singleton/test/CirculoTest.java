@@ -1,9 +1,12 @@
 package lab6Singleton.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import lab6Singleton.exeception.ExceptionValorNegativoOuZero;
+import lab6Singleton.models.Circulo;
 import lab6Singleton.models.FiguraGeometrica;
 import lab6Singleton.sistema.*;
 
@@ -26,5 +29,13 @@ public class CirculoTest {
     //Verifica o perimeto do circulo
     public void testPerimetroCirculo(){
         assertEquals(31.42, circulo.getPerimetro(), 1);
+    }
+
+    @Test
+    //verifica se o circulo é singleton
+    public void sigleton() throws ExceptionValorNegativoOuZero{
+        Circulo circulo2 = Fachada.criarCirculo(8);
+        assertSame(circulo,circulo2);
+    
     }
 }
