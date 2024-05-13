@@ -1,5 +1,7 @@
 package elementosConcretos;
 
+import exceptions.BaseMaiorException;
+import exceptions.NegativoException;
 import visitor.VisitorIF;
 
 public class Trapezio implements ElementoConcretoIF{
@@ -17,7 +19,7 @@ public class Trapezio implements ElementoConcretoIF{
     public double getLado2(){ return this.lado2; }
     public double getBaseMaior(){ return this.baseMaior; }
     public double getBaseMenor(){ return this.baseMenor; }
-    public void aceitaVisita(VisitorIF v){
+    public void aceitaVisita(VisitorIF v) throws NegativoException, BaseMaiorException {
         v.visitaTrapezio(this);
     }
 }

@@ -2,10 +2,12 @@ import elementosConcretos.Circulo;
 import elementosConcretos.Retangulo;
 import elementosConcretos.Trapezio;
 import elementosConcretos.Triangulo;
+import exceptions.BaseMaiorException;
+import exceptions.NegativoException;
 import visitor.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NegativoException, BaseMaiorException {
         // criação dos Visitors
         VisitorIF visitorMF = new VisitorMaxFigura();
         VisitorIF visitorDF = new VisitorDesenhaFigura();

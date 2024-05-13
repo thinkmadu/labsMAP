@@ -1,5 +1,6 @@
 package elementosConcretos;
 
+import exceptions.NegativoException;
 import visitor.VisitorIF;
 
 public class Circulo implements ElementoConcretoIF{
@@ -13,7 +14,7 @@ public class Circulo implements ElementoConcretoIF{
         return this.raio;
     }
 
-    public void aceitaVisita(VisitorIF v){
+    public void aceitaVisita(VisitorIF v) throws NegativoException {
         v.visitaCirculo(this);
     }
 }

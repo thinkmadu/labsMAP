@@ -1,5 +1,6 @@
 package elementosConcretos;
 
+import exceptions.NegativoException;
 import visitor.VisitorIF;
 
 public class Triangulo implements ElementoConcretoIF{
@@ -14,7 +15,7 @@ public class Triangulo implements ElementoConcretoIF{
 
     public double getBase(){ return this.base; }
 
-    public void aceitaVisita(VisitorIF v){
+    public void aceitaVisita(VisitorIF v) throws NegativoException {
         v.visitaTriangulo(this);
     }
 }

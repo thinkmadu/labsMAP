@@ -4,17 +4,23 @@ import elementosConcretos.Circulo;
 import elementosConcretos.Retangulo;
 import elementosConcretos.Trapezio;
 import elementosConcretos.Triangulo;
+import exceptions.NegativoException;
 
-public class VisitorDesenhaFigura implements VisitorIF{
+public class VisitorDesenhaFigura implements VisitorIF {
 
-    public double visitaCirculo(Circulo c) {
-        int raio = (int) c.getRaio();
-        int centro = raio;
+    public double visitaCirculo(Circulo c) throws NegativoException {
+        double raio = c.getRaio();
+        if (raio <= 0) {
+            throw new NegativoException();
+        }
 
-        for (int i = 0; i <= 2 * raio; i++) {
-            for (int j = 0; j <= 2 * raio; j++) {
+        int raioInt = (int) raio;
+        int centro = raioInt;
+
+        for (int i = 0; i <= 2 * raioInt; i++) {
+            for (int j = 0; j <= 2 * raioInt; j++) {
                 int distancia = (int) Math.sqrt((i - centro) * (i - centro) + (j - centro) * (j - centro));
-                if (distancia > raio - 0.5 && distancia < raio + 0.5) {
+                if (distancia > raioInt - 0.5 && distancia < raioInt + 0.5) {
                     System.out.print("*");
                 } else {
                     System.out.print(" ");
@@ -25,13 +31,19 @@ public class VisitorDesenhaFigura implements VisitorIF{
         return 0;
     }
 
-    public double visitaRetangulo(Retangulo r) {
-        int altura = (int) r.getAltura();
-        int largura = (int) r.getLargura();
+    public double visitaRetangulo(Retangulo r) throws NegativoException {
+        double altura = r.getAltura();
+        double largura = r.getLargura();
+        if (altura <= 0 || largura <= 0) {
+            throw new NegativoException();
+        }
 
-        for (int i = 0; i < altura; i++) {
-            for (int j = 0; j < largura; j++) {
-                if (i == 0 || i == altura - 1 || j == 0 || j == largura - 1) {
+        int alturaInt = (int) altura;
+        int larguraInt = (int) largura;
+
+        for (int i = 0; i < alturaInt; i++) {
+            for (int j = 0; j < larguraInt; j++) {
+                if (i == 0 || i == alturaInt - 1 || j == 0 || j == larguraInt - 1) {
                     System.out.print("*");
                 } else {
                     System.out.print(" ");
@@ -39,17 +51,22 @@ public class VisitorDesenhaFigura implements VisitorIF{
             }
             System.out.println();
         }
-
         return 0;
     }
 
-    public double visitaTriangulo(Triangulo t) {
-        int altura = (int) t.getAltura();
-        int base = (int) t.getBase();
+    public double visitaTriangulo(Triangulo t) throws NegativoException {
+        double altura = t.getAltura();
+        double base = t.getBase();
+        if (altura <= 0 || base <= 0) {
+            throw new NegativoException();
+        }
 
-        for (int i = 0; i < altura; i++) {
+        int alturaInt = (int) altura;
+        int baseInt = (int) base;
+
+        for (int i = 0; i < alturaInt; i++) {
             for (int j = 0; j <= i; j++) {
-                if (j == 0 || j == i || i == altura - 1) {
+                if (j == 0 || j == i || i == alturaInt - 1) {
                     System.out.print("*");
                 } else {
                     System.out.print(" ");
@@ -60,10 +77,16 @@ public class VisitorDesenhaFigura implements VisitorIF{
         return 0;
     }
 
-    public double visitaTrapezio(Trapezio t) {
-        double altura = Math.max(t.getLado1(), t.getLado2());
+    public double visitaTrapezio(Trapezio t) throws NegativoException {
+        double lado1 = t.getLado1();
+        double lado2 = t.getLado2();
         double baseMaior = t.getBaseMaior();
         double baseMenor = t.getBaseMenor();
+        if (lado1 <= 0 || lado2 <= 0 || baseMaior <= 0 || baseMenor <= 0) {
+            throw new NegativoException();
+        }
+
+        double altura = Math.max(lado1, lado2);
         double baseTotal = baseMaior + baseMenor;
 
         for (int i = 0; i < altura; i++) {
@@ -84,6 +107,4 @@ public class VisitorDesenhaFigura implements VisitorIF{
         }
         return 0; // Retorna 0, pois o método não calcula uma área
     }
-
-
 }
