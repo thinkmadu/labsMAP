@@ -1,5 +1,6 @@
 package lab6Singleton.test;
 
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -42,5 +43,11 @@ public class QuadradoTest {
     @Test
     public void testPerimetroQuadrado2() {
         assertEquals(20.00, quadrado2.getPerimetro(), 1);
+    }
+
+     @Test
+    //verifica se o quadrado é singleton
+    public void sigleton() throws ExceptionValorNegativoOuZero{
+        assertNotEquals(quadrado, quadrado2); //não são singleton os quadrados
     }
 }
