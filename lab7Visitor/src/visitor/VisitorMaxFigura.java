@@ -15,7 +15,7 @@ public class VisitorMaxFigura implements VisitorIF {
             throw new NegativoException();
         }
 
-        double raioDobrado = Math.pow(raio, 2);
+        double raioDobrado = raio * 2;
         System.out.println("Raio dobrado: " + raioDobrado);
 
         return raioDobrado;
