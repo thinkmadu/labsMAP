@@ -19,7 +19,7 @@ public class VisitorMaxFiguraTest {
         Circulo circulo = new Circulo(5);
         VisitorMaxFigura visitor = new VisitorMaxFigura();
         double area = visitor.visitaCirculo(circulo);
-        assertEquals(25.0, area, 0.001);
+        assertEquals(10.0, area, 0.001);
     }
 
     @Test

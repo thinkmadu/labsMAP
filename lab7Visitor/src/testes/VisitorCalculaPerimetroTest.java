@@ -35,12 +35,12 @@ public class VisitorCalculaPerimetroTest {
         Triangulo triangulo = new Triangulo(3, 4);
         VisitorCalculaPerimetro visitor = new VisitorCalculaPerimetro();
         double perimetro = visitor.visitaTriangulo(triangulo);
-        assertEquals(9, perimetro);
+        assertEquals(12, perimetro);
     }
 
     @Test
     public void testVisitaTrapezio() throws NegativoException, BaseMaiorException {
-        Trapezio trapezio = new Trapezio(3, 5, 4, 6);
+        Trapezio trapezio = new Trapezio(3, 5, 6, 4);
         VisitorCalculaPerimetro visitor = new VisitorCalculaPerimetro();
         double perimetro = visitor.visitaTrapezio(trapezio);
         assertEquals(18, perimetro);
@@ -57,7 +57,7 @@ public class VisitorCalculaPerimetroTest {
 
     @Test
     public void testVisitaTrapezioBaseMaiorMenor() {
-        Trapezio trapezio = new Trapezio(3, 5, 6, 4);
+        Trapezio trapezio = new Trapezio(3, 5, 4, 6);
         VisitorCalculaPerimetro visitor = new VisitorCalculaPerimetro();
         assertThrows(BaseMaiorException.class, () -> {
             visitor.visitaTrapezio(trapezio);
