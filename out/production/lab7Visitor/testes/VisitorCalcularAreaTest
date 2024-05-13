@@ -18,7 +18,7 @@ public class VisitorCalculaAreaTest {
         VisitorCalculaArea visitor = new VisitorCalculaArea();
         double area = visitor.visitaCirculo(circulo);
         assertEquals(78.53981633974483, area, 0.0001);
-    } 
+    }
 
     @Test
     public void testVisitaTriangulo() throws NegativoException {

@@ -82,26 +82,22 @@ public class VisitorDesenhaFigura implements VisitorIF {
         double lado2 = t.getLado2();
         double baseMaior = t.getBaseMaior();
         double baseMenor = t.getBaseMenor();
+        
         if (lado1 <= 0 || lado2 <= 0 || baseMaior <= 0 || baseMenor <= 0) {
             throw new NegativoException();
         }
-
         double altura = Math.max(lado1, lado2);
-        double baseTotal = baseMaior + baseMenor;
 
-        for (int i = 0; i < altura; i++) {
-            for (int j = 0; j < baseTotal; j++) {
-                double posicaoBase = (j - (baseMenor / 2.0)) / (baseTotal - baseMenor);
-                int numAsteriscos = (int) Math.round(posicaoBase * baseTotal);
-
-                for (int k = 0; k < numAsteriscos; k++) {
-                    System.out.print("*");
-                }
-
-                double numEspacosEsquerda = baseTotal - numAsteriscos;
-                for (int k = 0; k < numEspacosEsquerda; k++) {
-                    System.out.print(" ");
-                }
+        for (int linha = 0; linha < altura; linha++) {
+            double comprimentoLinha = baseMenor + linha * (baseMaior - baseMenor) / altura;
+            int espacosInicio = (int) ((baseMaior - comprimentoLinha) / 2);
+    
+            for (int i = 0; i < espacosInicio; i++) {
+                System.out.print(" ");
+            }
+    
+            for (int coluna = 0; coluna < comprimentoLinha; coluna++) {
+                System.out.print("*");
             }
             System.out.println();
         }
