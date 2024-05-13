@@ -61,21 +61,29 @@ public class VisitorDesenhaFigura implements VisitorIF{
     }
 
     public double visitaTrapezio(Trapezio t) {
-        int altura = (int) Math.max(t.getLado1(), t.getLado2());
-        int baseMaior = (int) t.getBaseMaior();
-        int baseMenor = (int) t.getBaseMenor();
-        int diferencaBases = baseMaior - baseMenor;
+        double altura = Math.max(t.getLado1(), t.getLado2());
+        double baseMaior = t.getBaseMaior();
+        double baseMenor = t.getBaseMenor();
+        double baseTotal = baseMaior + baseMenor;
 
         for (int i = 0; i < altura; i++) {
-            for (int j = 0; j < baseMaior + diferencaBases; j++) {
-                if (j < diferencaBases / 2 || j >= diferencaBases / 2 + baseMenor) {
-                    System.out.print(" ");
-                } else {
+            for (int j = 0; j < baseTotal; j++) {
+                double posicaoBase = (j - (baseMenor / 2.0)) / (baseTotal - baseMenor);
+                int numAsteriscos = (int) Math.round(posicaoBase * baseTotal);
+
+                for (int k = 0; k < numAsteriscos; k++) {
                     System.out.print("*");
+                }
+
+                double numEspacosEsquerda = baseTotal - numAsteriscos;
+                for (int k = 0; k < numEspacosEsquerda; k++) {
+                    System.out.print(" ");
                 }
             }
             System.out.println();
         }
-        return 0;
+        return 0; // Retorna 0, pois o método não calcula uma área
     }
+
+
 }
