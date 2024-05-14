@@ -7,12 +7,24 @@ public class Circulo implements FiguraGeometrica{
     private double raio;
 
     // Construtor
-    public Circulo(double raio) throws ExceptionValorNegativoOuZero {
-        if (raio <= 0) {
-            throw new ExceptionValorNegativoOuZero();
+
+    private static Circulo circuloInstance = null;
+    
+    private Circulo (double raio) throws ExceptionValorNegativoOuZero {
+
+        if (circuloInstance == null) {
+            if (raio <= 0) {
+                throw new ExceptionValorNegativoOuZero();
+            }
+            this.raio = raio;
+        }}
+
+        public static Circulo getCirculoInstance(double raio) throws ExceptionValorNegativoOuZero {
+            if (circuloInstance == null) {
+                circuloInstance = new Circulo(raio);
+            }
+            return circuloInstance;
         }
-        this.raio = raio;
-    }
 
     // Gets e Sets
     public double getRaio() {

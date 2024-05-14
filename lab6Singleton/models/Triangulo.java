@@ -7,12 +7,17 @@ import lab6Singleton.exeception.ExceptionValorNegativoOuZero;
 import lab6Singleton.exeception.ExceptionViolacaoDesigualdade;
 
 public class Triangulo implements FiguraGeometrica {
-    private static Triangulo[] instancias = {null, null, null};
     protected double lado1, lado2, lado3;
 
-    public Triangulo(double lado1, double lado2, double lado3) throws ExceptionValorNegativoOuZero,ExceptionViolacaoDesigualdade {
-        
-        
+    private static Triangulo trianguloIsosceles = null;
+    private static Triangulo trianguloEquilatero = null;
+    private static Triangulo trianguloRetangulo = null;
+
+
+    // Construtor
+
+    private Triangulo(double lado1, double lado2, double lado3) throws ExceptionValorNegativoOuZero,ExceptionViolacaoDesigualdade {
+              
         if (lado1 <= 0 || lado2 <= 0 || lado3 <= 0) {
             throw new ExceptionValorNegativoOuZero();
         }
@@ -23,6 +28,28 @@ public class Triangulo implements FiguraGeometrica {
         this.lado2 = lado2;
         this.lado3 = lado3;
     }
+
+
+    public static Triangulo getTrianguloInstance(double lado1, double lado2, double lado3) throws ExceptionValorNegativoOuZero, ExceptionViolacaoDesigualdade {
+        if (Triangulo.verificacaoTEquilatero(lado1, lado2, lado3)) {
+            if (trianguloEquilatero == null) {
+                trianguloEquilatero = new Triangulo(lado1, lado2, lado3);
+            }
+            return trianguloEquilatero;
+        } else if (Triangulo.verificacaoTIsosceles(lado1, lado2, lado3)) {
+            if (trianguloIsosceles == null) {
+                trianguloIsosceles = new Triangulo(lado1, lado2, lado3);
+            }
+            return trianguloIsosceles;
+        } else if (Triangulo.verificacaoTRetangulo(lado1, lado2, lado3)) {
+            if (trianguloRetangulo == null) {
+                trianguloRetangulo = new Triangulo(lado1, lado2, lado3);
+            }
+            return trianguloRetangulo;
+        }
+        throw new ExceptionViolacaoDesigualdade();
+    }
+    
 
     // Gets e sets -------------------------------------------------------------------
     public double getLado1() {
@@ -48,30 +75,8 @@ public class Triangulo implements FiguraGeometrica {
     public void setLado3(double lado3) {
         this.lado3 = lado3;
     }
+    
     //--------------------------------------------------------------------------------------------
-
-    public static Triangulo getInstancias(double lado1, double lado2, double lado3) throws ExceptionValorNegativoOuZero,ExceptionViolacaoDesigualdade {
-        if (!violaDesigualdadeTriangulo(lado1, lado2, lado3)) {
-            return null;
-        }
-
-        if (verificacaoTRetangulo(lado1, lado2, lado3)) {
-            if (instancias[2] == null) instancias[2] = new Triangulo(lado1, lado2, lado3);
-            return instancias[2];
-        }
-
-        if (verificacaoTEquilatero(lado1, lado2, lado3)) {
-            if (instancias[1] == null) instancias[1] = new Triangulo(lado1, lado2, lado3);
-            return instancias[1];
-        }
-
-        if (verificacaoTIsosceles(lado1, lado2, lado3)){
-            if (instancias[0] == null) instancias[0] = new Triangulo(lado1, lado2, lado3);
-            return instancias[0];
-        }
-        return null;
-    }
-
 
 
     // Verifica se a figura é um  triangulo retangulo (A² + B² = C²)

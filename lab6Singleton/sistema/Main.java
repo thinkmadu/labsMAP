@@ -11,6 +11,8 @@ public class Main {
             //  círculo único
             Circulo circulo = Fachada.criarCirculo(5.0);
             System.out.println("Círculo: Área = " + circulo.getArea() + ", Perímetro = " + circulo.getPerimetro());
+            //Circulo c = new Circulo(10.0);
+            //System.out.println("####Círculo: Área = " + c.getArea() + ", Perímetro = " + c.getPerimetro());
             
             //vai exibir as informações do círculo anterior
             Circulo circulo2 = Fachada.criarCirculo(6.0);
@@ -20,6 +22,7 @@ public class Main {
 
             //triângulo equilátero único
             Triangulo trianguloE = Fachada.criarTriangulo(3, 3, 3);
+            //Triangulo trianguloteste = new Triangulo(4, 4, 4);
             System.out.println("Triângulo: Área = " + trianguloE.getArea() + ", Perímetro = " + trianguloE.getPerimetro());
 
             //outro equilátero 

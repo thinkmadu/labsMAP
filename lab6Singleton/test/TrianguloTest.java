@@ -37,13 +37,13 @@ public class TrianguloTest {
     @Test
     public void testTriangulo() throws ExceptionValorNegativoOuZero, ExceptionViolacaoDesigualdade {
         //assertNotNull(Gerador.getTriangulo(3, 4, 5));
-        assertDoesNotThrow(() -> Gerador.getTriangulo(3, 4, 5));
+        assertDoesNotThrow(() -> Fachada.criarTriangulo(3, 4, 5));
     }
 
     @Test
     public void testTriangulo2() throws ExceptionValorNegativoOuZero, ExceptionViolacaoDesigualdade {
         //assertNotNull(Gerador.getTriangulo(5, 5, 5));
-        assertDoesNotThrow(() -> Gerador.getTriangulo(5, 5, 5));
+        assertDoesNotThrow(() -> Fachada.criarTriangulo(5, 5, 5));
     }
 
     //Testa se o triangulo é equilatero
