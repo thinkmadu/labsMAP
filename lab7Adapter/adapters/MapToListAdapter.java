@@ -1,3 +1,4 @@
+package adapters;
 import java.util.*;
 
 public class MapToListAdapter<E> implements List<E> {

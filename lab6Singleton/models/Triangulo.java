@@ -1,7 +1,5 @@
 package lab6Singleton.models;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 import lab6Singleton.exeception.ExceptionValorNegativoOuZero;
 import lab6Singleton.exeception.ExceptionViolacaoDesigualdade;
@@ -115,16 +113,6 @@ public class Triangulo implements FiguraGeometrica {
     } 
  
  
-    public int getNumberOfUniquelados() { 
-        Set<Double> lados = new HashSet<>(); 
- 
-        lados.add(lado1); 
-        lados.add(lado2); 
-        lados.add(lado3); 
- 
-        return lados.size(); 
-    } 
-
     //Soma dos lados / 3
     @Override
     public double getArea() {

@@ -1,3 +1,4 @@
+package adapters;
 import java.util.*;
 
 public class ListToMapAdapter<K, V> implements Map<K, V> {

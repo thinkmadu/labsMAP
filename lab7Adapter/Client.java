@@ -1,5 +1,8 @@
 import java.util.*;
 
+import adapters.ListToMapAdapter;
+import adapters.MapToListAdapter;
+
 public class Client {
     public static void main(String[] args) {
         // Criação de uma lista e seu adaptador
@@ -25,6 +28,7 @@ public class Client {
 
         listAsMap.clear();
         System.out.println("Lista após limpar: " + listAsMap.values());
+        System.out.println("-".repeat(25));
 
         // Criação de um mapa e seu adaptador
         Map<Integer, String> map = new HashMap<>();
@@ -48,5 +52,6 @@ public class Client {
 
         mapAsList.clear();
         System.out.println("Lista após limpar: " + mapAsList);
+        System.out.println("-".repeat(25));
     }
 }
