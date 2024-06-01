@@ -8,8 +8,9 @@ import exceptions.NegativoException;
 import org.junit.Test;
 import visitor.VisitorCalculaArea;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
 
 public class VisitorCalculaAreaTest {
 
@@ -39,10 +40,10 @@ public class VisitorCalculaAreaTest {
 
     @Test
     public void testVisitaTrapezio() throws NegativoException, BaseMaiorException {
-        Trapezio trapezio = new Trapezio(4, 2, 3, 4);
+        Trapezio trapezio = new Trapezio(4, 2, 4, 3);
         VisitorCalculaArea visitor = new VisitorCalculaArea();
         double area = visitor.visitaTrapezio(trapezio);
-        assertEquals(9.0, area, 0.0001);
+        assertEquals(3.5, area, 0.0001);
     }
 
     @Test(expected = NegativoException.class)
