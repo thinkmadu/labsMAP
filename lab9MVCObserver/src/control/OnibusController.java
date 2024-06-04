@@ -5,23 +5,35 @@ import model.Onibus;
 public class OnibusController {
     private Onibus onibus;
 
-    public OnibusController(Onibus onibus) {
-        this.onibus = onibus;
+    public OnibusController(int totalAssentos) {
+        this.onibus = new Onibus(totalAssentos);
     }
 
-    public void reservarAssento(int numero) {
-        if (onibus.reservarAssento(numero)) {
-            System.out.println("Assento " + numero + " reservado com sucesso!");
+    public String reservarAssento(int assento) {
+        if (assento < 1 || assento > onibus.getTotalAssentos()) {
+            throw new IllegalArgumentException("Assento " + assento + " não existe.");
+        }
+
+        if (onibus.isAssentoReservado(assento)) {
+            return "Não foi possível reservar o assento " + assento;
+        } else if (onibus.reservarAssento(assento)) {
+            return "Assento " + assento + " reservado com sucesso!";
         } else {
-            System.out.println("Não foi possível reservar o assento " + numero);
+            return "Não foi possível reservar o assento " + assento;
         }
     }
 
-    public void comprarAssento(int numero) {
-        if (onibus.comprarAssento(numero)) {
-            System.out.println("Assento " + numero + " comprado com sucesso!");
+    public String comprarAssento(int assento) {
+        if (assento < 1 || assento > onibus.getTotalAssentos()) {
+            throw new IllegalArgumentException("Assento " + assento + " não existe.");
+        }
+
+        if (onibus.isAssentoComprado(assento)) {
+            return "Não foi possível comprar o assento " + assento;
+        } else if (onibus.comprarAssento(assento)) {
+            return "Assento " + assento + " comprado com sucesso!";
         } else {
-            System.out.println("Não foi possível comprar o assento " + numero);
+            return "Não foi possível comprar o assento " + assento;
         }
     }
 }

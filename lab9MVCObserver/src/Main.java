@@ -1,35 +1,38 @@
-import model.Onibus;
-import view.Painel;
-import view.Quiosque;
-import control.OnibusController;
 import java.util.Scanner;
+import control.OnibusController;
 
 public class Main {
     public static void main(String[] args) {
-        Onibus onibus = new Onibus(16); // Exemplo com 16 assentos
-        Painel painel = new Painel(onibus);
-        Quiosque quiosque = new Quiosque(onibus);
-        OnibusController controller = new OnibusController(onibus);
         Scanner scanner = new Scanner(System.in);
-        
+        OnibusController controller = new OnibusController(10); 
+
         while (true) {
-            System.out.println("Escolha uma ação: 1. Reservar 2. Comprar 3. Sair");
-            int acao = scanner.nextInt();
-            
-            if (acao == 3) {
+            System.out.println("Escolha uma operação:");
+            System.out.println("1 - Reservar assento");
+            System.out.println("2 - Comprar assento");
+            System.out.println("3 - Sair");
+            int opcao = scanner.nextInt();
+
+            if (opcao == 3) {
                 break;
             }
-            
+
             System.out.println("Digite o número do assento:");
-            int numero = scanner.nextInt();
-            
-            if (acao == 1) {
-                controller.reservarAssento(numero);
-            } else if (acao == 2) {
-                controller.comprarAssento(numero);
+            int assento = scanner.nextInt();
+
+            try {
+                if (opcao == 1) {
+                    System.out.println(controller.reservarAssento(assento));
+                } else if (opcao == 2) {
+                    System.out.println(controller.comprarAssento(assento));
+                } else {
+                    System.out.println("Opção inválida.");
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
             }
         }
-        
+
         scanner.close();
     }
 }
